@@ -9,19 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a [routerLink]="['/home']" class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accedi</a>
+          <a [routerLink]="['/accedi']" class="nav-link active" aria-current="page" href="#">Accedi</a>
         </li>
         </ul>
     </div>
   </div>
 </nav>
 
-<mat-grid-list cols="3" rowHeight="100px">
-  <mat-grid-tile>Uno</mat-grid-tile>
-  <mat-grid-tile>Due</mat-grid-tile>
-  <mat-grid-tile>Tre</mat-grid-tile>
-</mat-grid-list>
+<app-grid-list></app-grid-list>
+<router-outlet></router-outlet>
 </body>
