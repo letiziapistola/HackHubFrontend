@@ -1,24 +1,23 @@
-import { Component } from '@angular/core';
-import { Auth } from '../../../core/auth/auth';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink } from "@angular/router";
+import { DataTransfer} from '../../../core/data-transfer/data-transfer';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
-  constructor(protected auth: Auth) {}
+export class Home implements OnInit{
+  selectedRole: any;
+  roleValue: any;
 
-  getRole() {
-    return this.auth.role();
-  }
+  constructor(private dataTransfer:DataTransfer){}
 
-  getUser() {
-    return this.auth.user();
-  }
-
-  hasPermission(permission: string) {
-    return this.auth.hasPermission(permission as any);
+  ngOnInit(): void {
+    this.dataTransfer.currentSelectedRole.subscribe(role => {
+        this.selectedRole = role;
+        this.roleValue = this.selectedRole;
+    } );
   }
 }
