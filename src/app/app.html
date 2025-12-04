@@ -1,7 +1,8 @@
-<a [routerLink]="['/homeVisitor']" class ="btn btn-primary m-2" aria-current="page" href="#">Visitor home</a>
-<a [routerLink]="['/homePartecipant']" class ="btn btn-primary m-2" aria-current="page" href="#">Partecipant home</a>
-<a [routerLink]="['/homeStaffMember']" class ="btn btn-primary m-2" aria-current="page" href="#">Staff member home</a>
-<a [routerLink]="['/homeHackathonStaffMember']" class ="btn btn-primary m-2" aria-current="page" href="#">Hackathon staff member home</a>
-<a [routerLink]="['/homeOrganizer']" class ="btn btn-primary m-2" aria-current="page" href="#">Organizer home</a>
-<a [routerLink]="['/homeMentor']" class ="btn btn-primary m-2" aria-current="page" href="#">Mentor home</a>
-<a [routerLink]="['/homeJudge']" class ="btn btn-primary m-2" aria-current="page" href="#">Judge home</a>
+<a [routerLink]="['/home']" class="btn btn-primary m-2" aria-current="page" (click)="setRole('VISITOR')">Visitor home</a>
+<a [routerLink]="['/home']" class="btn btn-primary m-2" aria-current="page" (click)="setRole('PARTICIPANT')">Participant home</a>
+<a [routerLink]="['/home']" class ="btn btn-primary m-2" aria-current="page" (click)="setRole('STAFF_MEMBER')">Staff member home</a>
+<a [routerLink]="['/home']" class ="btn btn-primary m-2" aria-current="page" (click)="setRole('HACKATHON_STAFF_MEMBER')">Hackathon staff member home</a>
+<a [routerLink]="['/home']" class ="btn btn-primary m-2" aria-current="page" (click)="setRole('ORGANIZER')">Organizer home</a>
+<a [routerLink]="['/home']" class ="btn btn-primary m-2" aria-current="page" (click)="setRole('MENTOR')">Mentor home</a>
+<a [routerLink]="['/home']" class ="btn btn-primary m-2" aria-current="page">Judge home</a>
+<router-outlet></router-outlet>

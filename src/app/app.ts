@@ -10,4 +10,5 @@ import { GridList } from './shared/components/grid-list/grid-list';
 })
 export class App {
   protected readonly title = signal('hackhubFrontend');
+
 }
