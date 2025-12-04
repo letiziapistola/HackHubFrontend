@@ -1,0 +1,20 @@
+<h2>{{ hackathon.name }}</h2>
+
+<p>{{ hackathon.description }}</p>
+
+<!-- VISITATORE -->
+@if (role() === 'VISITOR') {
+  <div>
+    <p>Accedi per partecipare</p>
+  </div>
+}
+
+<!-- TEAM MEMBER -->
+@if (role() === 'TEAM_MEMBER') {
+  <button (click)="sendSubmission()">Invia sottomissione</button>
+}
+
+<!-- TEAM LEADER -->
+@if (role() === 'TEAM_LEADER') {
+  <button (click)="enrollTeam()">Iscrivi il tuo team</button>
+}

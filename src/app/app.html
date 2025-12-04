@@ -1,24 +1,7 @@
-<body>
-  <h1>HackHub</h1>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Menu</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a [routerLink]="['/home']" class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a [routerLink]="['/accedi']" class="nav-link active" aria-current="page" href="#">Accedi</a>
-        </li>
-        </ul>
-    </div>
-  </div>
-</nav>
-
-<app-grid-list></app-grid-list>
-<router-outlet></router-outlet>
-</body>
+<a [routerLink]="['/homeVisitor']" class ="btn btn-primary m-2" aria-current="page" href="#">Visitor home</a>
+<a [routerLink]="['/homePartecipant']" class ="btn btn-primary m-2" aria-current="page" href="#">Partecipant home</a>
+<a [routerLink]="['/homeStaffMember']" class ="btn btn-primary m-2" aria-current="page" href="#">Staff member home</a>
+<a [routerLink]="['/homeHackathonStaffMember']" class ="btn btn-primary m-2" aria-current="page" href="#">Hackathon staff member home</a>
+<a [routerLink]="['/homeOrganizer']" class ="btn btn-primary m-2" aria-current="page" href="#">Organizer home</a>
+<a [routerLink]="['/homeMentor']" class ="btn btn-primary m-2" aria-current="page" href="#">Mentor home</a>
+<a [routerLink]="['/homeJudge']" class ="btn btn-primary m-2" aria-current="page" href="#">Judge home</a>

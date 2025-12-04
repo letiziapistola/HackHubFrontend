@@ -1,8 +1,8 @@
 <mat-grid-list [cols]="cols" [rowHeight]="rowHeight">
   @for (card of cards; track card) {
     <mat-grid-tile>
-    <app-hackathon-card [data]="card">
-    </app-hackathon-card>
+    <app-card [data]="card">
+    </app-card>
   </mat-grid-tile>
   }
 </mat-grid-list>

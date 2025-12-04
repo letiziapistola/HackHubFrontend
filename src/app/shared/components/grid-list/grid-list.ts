@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
-import { HackathonCard } from "../hackathon-card/hackathon-card";
+import { Card } from '../../../features/hackathons/card/card';
 
 @Component({
   selector: 'app-grid-list',
-  imports: [MatGridListModule, MatGridTile, HackathonCard],
+  imports: [MatGridListModule, MatGridTile, Card],
   templateUrl: './grid-list.html',
   styleUrl: './grid-list.scss',
 })

@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-hackathon-card',
+  selector: 'app-card',
   imports: [],
-  templateUrl: './hackathon-card.html',
-  styleUrl: './hackathon-card.scss',
+  templateUrl: './card.html',
+  styleUrl: './card.scss',
 })
-export class HackathonCard {
+export class Card {
   @Input() data!: {
     title: string;
     description: string;
