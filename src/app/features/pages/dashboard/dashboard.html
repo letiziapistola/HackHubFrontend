@@ -1,6 +1,14 @@
 <body>
     <h1>Dashboard</h1>
     @if (roleValue === 'PARTICIPANT') {
-        <button>Crea team</button>
+    <button class="btn btn-primary">Crea team</button>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Invito da @jamesT</h5>
+            <p class="card-text">Vuoi unirti al mio team "Supers"?</p>
+            <a href="#" class="btn btn-primary">Accetta</a>
+            <a href="#" class="btn btn-primary m-2">Rifiuta</a>
+        </div>
+    </div>
     }
 </body>

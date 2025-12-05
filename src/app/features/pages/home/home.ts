@@ -13,6 +13,16 @@ import { Dashboard } from "../dashboard/dashboard";
 export class Home {
   roleValue: any;
 
+    protected activePage = 'HOME';
+
+    viewDashboard(){
+      this.activePage = 'DASHBOARD';
+    }
+
+    viewHome(){
+      this.activePage = 'HOME';
+    }
+
   constructor(private dataTransfer:DataTransfer){
     effect(() => {
       this.roleValue = this.dataTransfer.roleSource();
