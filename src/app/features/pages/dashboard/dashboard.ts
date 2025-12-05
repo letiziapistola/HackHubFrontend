@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { DataTransfer } from '../../../core/data-transfer/data-transfer';
 
 @Component({
@@ -9,14 +9,10 @@ import { DataTransfer } from '../../../core/data-transfer/data-transfer';
 })
 export class Dashboard {
   roleValue: any;
-  selectedRole: any;
 
-  constructor(private dataTransfer:DataTransfer) {}
-
-  ngOnInit(): void{
-    this.dataTransfer.currentSelectedRole.subscribe(role => {
-      this.selectedRole = role;
-      this.roleValue = this.selectedRole;
-    })
+  constructor(private dataTransfer:DataTransfer) {
+    effect(() => {
+      this.roleValue = this.dataTransfer.roleSource();
+    });
   }
 }
