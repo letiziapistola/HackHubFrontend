@@ -2,10 +2,3 @@ mat-grid-tile {
   background: lightblue;
 }
 
-.multiline-ellipsis {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;  /* numero di righe massime */
-  line-clamp: 3;
-  overflow: hidden;
-}

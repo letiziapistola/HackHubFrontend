@@ -8,14 +8,5 @@ import { Card } from "../card/card";
   styleUrl: './detail.scss',
 })
 export class Detail {
-enrollTeam() {
-throw new Error('Method not implemented.');
-}
-sendSubmission() {
-throw new Error('Method not implemented.');
-}
-hackathon: any;
-role(){
-  return 'VISITOR';
-}
+
 }
