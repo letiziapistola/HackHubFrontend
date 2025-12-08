@@ -1,9 +1,10 @@
 import { Component, effect } from '@angular/core';
 import { DataTransfer } from '../../../core/data-transfer/data-transfer';
+import { InviteCard } from '../../../shared/components/invite-card/invite-card';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [InviteCard],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

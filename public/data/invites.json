@@ -1,0 +1,37 @@
+[
+  {
+    "senderName": "jamesT",
+    "teamName": "Supers",
+    "message": "Vuoi unirti al mio team?",
+    "createdAt": "2025-08-01T10:00:00Z",
+    "status": "PENDING"
+  },
+  {
+    "senderName": "marioR",
+    "teamName": "Innovators",
+    "message": "Ti aspettiamo nel nostro team per l'hackathon!",
+    "createdAt": "2025-12-08T18:12:00Z",
+    "status": "PENDING"
+  },
+  {
+    "senderName": "lucaB",
+    "teamName": "Code Warriors",
+    "message": "Abbiamo bisogno delle tue competenze!",
+    "createdAt": "2024-06-01T10:00:00Z",
+    "status": "PENDING"
+  },
+    {
+        "senderName": "annaS",
+        "teamName": "Hack Masters",
+        "message": "Unisciti a noi per vincere!",
+        "createdAt": "2024-06-01T10:00:00Z",
+        "status": "PENDING"
+    },
+    {
+        "senderName": "paoloD",
+        "teamName": "Tech Titans",
+        "message": "Il tuo talento è ciò che ci manca!",
+        "createdAt": "2024-06-01T10:00:00Z",
+        "status": "PENDING"
+    }
+]

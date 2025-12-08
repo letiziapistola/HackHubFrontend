@@ -13,7 +13,6 @@ import { R } from '@angular/cdk/keycodes';
 export class App {
   protected readonly title = signal('hackhubFrontend');
 
-  protected activePage = ' '
 
   constructor(private dataTransfer: DataTransfer) { }
   

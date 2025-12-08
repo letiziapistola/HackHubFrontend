@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-5 g-4">
+    @for (invite of invites(); track $index) {
+        <div class="col">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Team "{{invite.teamName}}"</h5>
+            <p class="card-subtitle mb-2 text-body-secondary">Invito da @{{invite.senderName}}</p>
+            <p class="card-text">{{invite.message}}</p>
+            <a href="#" class="btn btn-primary">Accetta</a>
+            <a href="#" class="btn btn-danger m-2">Rifiuta</a>
+            <p class="card-text">
+                <small class="text-body-secondary">Inviato {{ invite.createdAt | timeAgo }}</small>
+            </p>
+        </div>
+    </div>
+        </div>
+    }
+</div>
