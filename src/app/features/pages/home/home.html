@@ -13,19 +13,19 @@
                     <li class="nav-item">
                         <a (click)="viewHome()" class="nav-link active" aria-current="page">Home</a>
                     </li>
-                    @if (roleValue === 'VISITATOR') {
+                    @if (!auth.isLoggedIn()) {
                     <li class="nav-item">
-                        <a [routerLink]="['/']" class="nav-link active" aria-current="page">Accedi</a>
+                        <a (click)="viewLogin()" class="nav-link active" aria-current="page">Accedi</a>
                     </li>
                     <li class="nav-item">
                         <a [routerLink]="['/']" class="nav-link active" aria-current="page">Registrati</a>
                     </li>
                     }
-                    @if (roleValue !== 'VISITATOR') {
-                        <li class="nav-item">
+                    @if (auth.isLoggedIn()) {
+                    <li class="nav-item">
                         <a (click)="viewDashboard()" class="nav-link active" aria-current="page">Dashboard</a>
                     </li>
-                        <li class="nav-item">
+                    <li class="nav-item">
                         <a [routerLink]="['/']" class="nav-link active" aria-current="page">Account</a>
                     </li>
                     }
@@ -33,48 +33,14 @@
             </div>
         </div>
     </nav>
-
+    @if (activePage==='HOME') {
+    <app-grid-list></app-grid-list>
+    }
+    @if (activePage==='DASHBOARD') {
+    <app-dashboard></app-dashboard>
+    }
+    @if (activePage==='LOGIN') {
+    <app-login></app-login>
+    }
     <router-outlet></router-outlet>
-    @if (activePage === 'HOME') {
-        <app-grid-list></app-grid-list>
-    }
-    @if (activePage === 'DASHBOARD') {
-        <app-dashboard></app-dashboard>
-    }
-
-    @if (roleValue === 'VISITATOR') {
-    <p>Ciao visitatore!!</p>
-    }
-
-    @if (roleValue === 'PARTICIPANT') {
-    <p>Ciao partecipante!!</p>
-    }
-
-    @if (roleValue === 'GENERIC-STAFF') {
-    <p>Ciao staff generico!!</p>
-    }
-
-    @if (roleValue === 'HACKATHON-STAFF') {
-    <p>Ciao staff di un hackathon!!</p>
-    }
-
-    @if (roleValue === 'TEAM-MEMBER') {
-    <p>Ciao membro di un team!!</p>
-    }
-
-    @if (roleValue === 'TEAM-LEADER') {
-    <p>Ciao leader di un team!!</p>
-    }
-
-    @if (roleValue === 'MENTOR') {
-    <p>Ciao mentore!!</p>
-    }
-
-    @if (roleValue === 'JUDGE') {
-    <p>Ciao giudice!!</p>
-    }
-
-    @if (roleValue === 'ORGANIZER') {
-    <p>Ciao organizzatore!!</p>
-    }
 </body>

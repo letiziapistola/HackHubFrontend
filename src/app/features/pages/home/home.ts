@@ -1,31 +1,34 @@
-import { Component, effect } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { DataTransfer} from '../../../core/data-transfer/data-transfer';
 import { GridList } from '../../../shared/components/grid-list/grid-list';
 import { Dashboard } from "../dashboard/dashboard";
+import { Auth } from '../../../core/auth/auth';
+import { Login } from '../login/login';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, GridList, RouterOutlet, Dashboard],
+  imports: [RouterLink, GridList, RouterOutlet, Dashboard, Login],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
-  roleValue: any;
+  protected activePage = 'HOME';
 
-    protected activePage = 'HOME';
+  constructor(
+    private dataTransfer: DataTransfer,
+    public auth: Auth
+  ) {}
 
-    viewDashboard(){
-      this.activePage = 'DASHBOARD';
-    }
+  viewDashboard() {
+    this.activePage = 'DASHBOARD';
+  }
 
-    viewHome(){
-      this.activePage = 'HOME';
-    }
+  viewHome() {
+    this.activePage = 'HOME';
+  }
 
-  constructor(private dataTransfer:DataTransfer){
-    effect(() => {
-      this.roleValue = this.dataTransfer.roleSource();
-    });
+  viewLogin() {
+    this.activePage = 'LOGIN';
   }
 }
