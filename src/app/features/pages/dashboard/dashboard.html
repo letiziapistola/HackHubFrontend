@@ -1,10 +1,14 @@
 <body>
     <h1>Dashboard</h1>
-    @if (roleValue === 'PARTICIPANT') {
-    <div class="alert alert-primary">Non fai ancora parte di un team, per partecipare agli hackathon devi prima crearne uno o unirti a un team esistente!<br>
-        <button class="btn btn-primary mt-2">Crea team</button>
+    @if (roleValue === 'USER') {
+    <div class="alert alert-primary">Per partecipare agli hackathon crea un team o un hackathon!<br>
+        <button class="btn btn-primary">Crea team</button> <button class="btn btn-primary m-2">Crea hackathon</button>
     </div>
-    <h3>Inviti ricevuti</h3>
-    <app-invite-card></app-invite-card>
+    <h2>Inviti da team</h2>
+    <div class="alert alert-primary">Qui puoi gestire i tuoi inviti ricevuti dai team.<br></div>
+    <app-invite-team-card></app-invite-team-card>
+    <h2>Inviti da staff</h2>
+    <div class="alert alert-primary">Qui puoi gestire i tuoi inviti per far parte dello staff di un hackathon.<br></div>
+    <app-invite-staff-card></app-invite-staff-card>
     }
 </body>

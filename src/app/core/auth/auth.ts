@@ -3,7 +3,7 @@ import { computed, Injectable, signal } from "@angular/core";
 export interface UserPayload {
   id: string;
   email: string;
-  role: 'PARTICIPANT' | 'ORGANIZER' | 'TEAM-MEMBER' | 'TEAM-LEADER' | 'GENERIC-STAFF' | 'HACKATHON-STAFF' | 'MENTOR'| 'JUDGE';
+  role: 'USER' | 'ORGANIZER' | 'TEAM-MEMBER' | 'TEAM-LEADER' | 'STAFF' | 'MENTOR'| 'JUDGE' | null;
   exp: number;
 }
 
@@ -32,7 +32,7 @@ export class Auth {
     const payload: UserPayload = {
       id: '1',
       email,
-      role: 'PARTICIPANT',
+      role: null,
       exp: Date.now() + 3600 * 1000, // 1 hour expiry
     };
 

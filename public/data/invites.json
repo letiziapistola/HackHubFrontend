@@ -1,5 +1,7 @@
 [
   {
+    "id": "1",
+    "type": "TEAM",
     "senderName": "jamesT",
     "teamName": "Supers",
     "message": "Vuoi unirti al mio team?",
@@ -7,6 +9,8 @@
     "status": "PENDING"
   },
   {
+    "id": "2",
+    "type": "TEAM",
     "senderName": "marioR",
     "teamName": "Innovators",
     "message": "Ti aspettiamo nel nostro team per l'hackathon!",
@@ -14,24 +18,42 @@
     "status": "PENDING"
   },
   {
+    "id": "3",
+    "type": "TEAM",
     "senderName": "lucaB",
     "teamName": "Code Warriors",
     "message": "Abbiamo bisogno delle tue competenze!",
     "createdAt": "2024-06-01T10:00:00Z",
     "status": "PENDING"
   },
-    {
-        "senderName": "annaS",
-        "teamName": "Hack Masters",
-        "message": "Unisciti a noi per vincere!",
-        "createdAt": "2024-06-01T10:00:00Z",
-        "status": "PENDING"
-    },
-    {
-        "senderName": "paoloD",
-        "teamName": "Tech Titans",
-        "message": "Il tuo talento è ciò che ci manca!",
-        "createdAt": "2024-06-01T10:00:00Z",
-        "status": "PENDING"
-    }
+  {
+    "id": "4",
+    "type": "STAFF",
+    "senderName": "annaS",
+    "hackathonName": "AI Innovation Challenge 2025",
+    "role": "JUDGE",
+    "message": "Ti invitiamo a far parte della giuria del nostro hackathon!",
+    "createdAt": "2025-12-10T14:30:00Z",
+    "status": "PENDING"
+  },
+  {
+    "id": "5",
+    "type": "STAFF",
+    "senderName": "paoloD",
+    "hackathonName": "Web3 Hackathon",
+    "role": "MENTOR",
+    "message": "Cerchiamo mentori esperti come te per guidare i team!",
+    "createdAt": "2025-12-11T09:15:00Z",
+    "status": "PENDING"
+  },
+  {
+    "id": "6",
+    "type": "STAFF",
+    "senderName": "giuliaM",
+    "hackathonName": "Green Tech Summit",
+    "role": "JUDGE",
+    "message": "La tua esperienza nel settore sarebbe preziosa come giudice!",
+    "createdAt": "2025-12-09T16:45:00Z",
+    "status": "PENDING"
+  }
 ]

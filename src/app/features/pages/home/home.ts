@@ -31,4 +31,9 @@ export class Home {
   viewLogin() {
     this.activePage = 'LOGIN';
   }
+
+  logout() {
+    this.auth.logout();
+    this.viewHome();
+  }
 }

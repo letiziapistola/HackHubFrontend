@@ -1,5 +1,5 @@
 <div class="row row-cols-1 row-cols-md-5 g-4">
-    @for (invite of invites(); track $index) {
+    @for (invite of invites(); track invite.id) {
         <div class="col">
     <div class="card">
         <div class="card-body">

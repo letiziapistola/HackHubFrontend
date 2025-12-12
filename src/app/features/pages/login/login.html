@@ -1,13 +1,26 @@
-<h1>Login</h1>
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<h1>Login mock</h1>
+
+@if (auth.isLoggedIn()) {
+  <div class="alert alert-success" role="alert">
+    Loggato come {{ auth.user()?.email }} (ruolo: {{ auth.role() ?? 'Nessun ruolo' }})
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <button class="btn btn-outline-danger" type="button" (click)="auth.logout()">Logout</button>
+}
+
+@if (!auth.isLoggedIn()) {
+  <form (submit)="onSubmit(email.value, password.value); $event.preventDefault()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input #email type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+      <div id="emailHelp" class="form-text">Mock login: inserisci qualunque email.</div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input #password type="password" class="form-control" id="password" required>
+    </div>
+    @if (error()) {
+      <div class="alert alert-danger" role="alert">{{ error() }}</div>
+    }
+    <button type="submit" class="btn btn-primary" [disabled]="submitting()">Accedi</button>
+  </form>
+}

@@ -26,7 +26,10 @@
                         <a (click)="viewDashboard()" class="nav-link active" aria-current="page">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a [routerLink]="['/']" class="nav-link active" aria-current="page">Account</a>
+                        <span class="nav-link disabled">{{ auth.user()?.email }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="logout()" class="nav-link text-danger" aria-current="page">Logout</a>
                     </li>
                     }
                 </ul>
