@@ -1,0 +1,20 @@
+<div class="teams-section">
+        <h2>Il tuo Team</h2>
+        @for (team of userTeams; track team.id) {
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ team.name }}</h5>
+                <p class="card-text">
+                    <strong>Leader:</strong> {{ team.leader }} @if(roleValue === 'TEAM-LEADER'){
+                    <br>
+                    <button class="btn btn-outline-primary mt-2 mb-2 btn-sm">Trasferisci ruolo</button>} <br>
+                    <strong>Membri:</strong> {{ team.members.join(', ') }} @if(roleValue === 'TEAM-LEADER'){
+                    <br>
+                    <button type="button" class="btn btn-outline-primary btn-sm">Aggiungi</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm m-2">Rimuovi</button>
+                }
+                </p>
+            </div>
+        </div>
+        }
+    </div>

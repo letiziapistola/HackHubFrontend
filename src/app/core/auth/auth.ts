@@ -3,8 +3,17 @@ import { computed, Injectable, signal } from "@angular/core";
 export interface UserPayload {
   id: string;
   email: string;
-  role: 'USER' | 'ORGANIZER' | 'TEAM-MEMBER' | 'TEAM-LEADER' | 'STAFF' | 'MENTOR'| 'JUDGE' | null;
+  username: string;
+  role: 'USER' | 'ORGANIZER' | 'TEAM-MEMBER' | 'TEAM-LEADER' | 'MENTOR'| 'JUDGE' | null;
   exp: number;
+}
+
+interface MockUser {
+  id: string;
+  email: string;
+  password: string;
+  username: string;
+  role: 'USER' | 'ORGANIZER' | 'TEAM-MEMBER' | 'TEAM-LEADER' | 'MENTOR'| 'JUDGE' | null;
 }
 
 @Injectable({
@@ -12,6 +21,22 @@ export interface UserPayload {
 })
 export class Auth {
   private userSignal = signal<UserPayload | null>(null);
+  private mockUsers: MockUser[] = [
+    {
+      id: '1',
+      email: 'james@example.com',
+      password: 'password123',
+      username: 'jamesT',
+      role: 'TEAM-LEADER',
+    },
+    {
+      id: '2',
+      email: 'alice@example.com',
+      password: 'password123',
+      username: 'aliceW',
+      role: 'TEAM-MEMBER',
+    },
+  ];
 
   user = computed(() => this.userSignal());
   isLoggedIn = computed(() => this.userSignal() !== null);
@@ -28,11 +53,18 @@ export class Auth {
   }
 
   login(email: string, password: string) {
-    // Mock login implementation
+    // Verifica credenziali nel mock database
+    const mockUser = this.mockUsers.find(u => u.email === email && u.password === password);
+    
+    if (!mockUser) {
+      return false;
+    }
+
     const payload: UserPayload = {
-      id: '1',
-      email,
-      role: null,
+      id: mockUser.id,
+      email: mockUser.email,
+      username: mockUser.username,
+      role: mockUser.role,
       exp: Date.now() + 3600 * 1000, // 1 hour expiry
     };
 

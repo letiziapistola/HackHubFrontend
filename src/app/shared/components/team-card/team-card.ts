@@ -1,19 +1,18 @@
 import { Component, effect } from '@angular/core';
 import { DataTransfer } from '../../../core/data-transfer/data-transfer';
-import { InviteTeamCard } from '../../../shared/components/invite-team-card/invite-team-card';
-import { InviteStaffCard } from '../../../shared/components/invite-staff-card/invite-staff-card';
-import { TeamCard } from '../../../shared/components/team-card/team-card';
 import { TeamService } from '../../../core/services/team.service';
 import { Auth } from '../../../core/auth/auth';
 
+
+
 @Component({
-  selector: 'app-dashboard',
-  imports: [InviteTeamCard, InviteStaffCard, TeamCard],
-  templateUrl: './dashboard.html',
-  styleUrl: './dashboard.scss',
+  selector: 'app-team-card',
+  imports: [],
+  templateUrl: './team-card.html',
+  styleUrl: './team-card.scss',
 })
-export class Dashboard {
-  roleValue: any;
+export class TeamCard {
+roleValue: any;
   userTeams: any;
   currentUser: any;
 
@@ -35,4 +34,3 @@ export class Dashboard {
     });
   }
 }
-

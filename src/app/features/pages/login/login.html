@@ -2,17 +2,23 @@
 
 @if (auth.isLoggedIn()) {
   <div class="alert alert-success" role="alert">
-    Loggato come {{ auth.user()?.email }} (ruolo: {{ auth.role() ?? 'Nessun ruolo' }})
+    Loggato come {{ auth.user()?.email }} ({{ auth.user()?.username }}) - Ruolo: {{ auth.role() ?? 'Nessun ruolo' }}
   </div>
   <button class="btn btn-outline-danger" type="button" (click)="auth.logout()">Logout</button>
 }
 
 @if (!auth.isLoggedIn()) {
+  <div class="alert alert-info" role="alert">
+    <strong>Credenziali mock valide:</strong><br>
+    Email: <code>james@example.com</code><br>
+    Password: <code>password123</code><br>
+    Utente: jamesT (TEAM-LEADER)
+  </div>
+  
   <form (submit)="onSubmit(email.value, password.value); $event.preventDefault()">
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
       <input #email type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
-      <div id="emailHelp" class="form-text">Mock login: inserisci qualunque email.</div>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>

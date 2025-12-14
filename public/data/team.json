@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Supers",
+        "members": ["jamesT", "aliceW", "bobK"],
+        "leader": "jamesT"
+    },
+    {
+        "id": "2",
+        "name": "Innovators",
+        "members": ["marioR", "saraL", "tomH"],
+        "leader": "marioR"
+    },
+    {
+        "id": "3",
+        "name": "Code Warriors",
+        "members": ["lucaB", "emmaC", "noahD"],
+        "leader": "lucaB"
+    }
+]
